@@ -2,7 +2,13 @@
 <templates xml:space="preserve">
 
     <t t-name="webgis.AwesomeDashboard">
-        你好，这里是地理信息系统
+        
+        <!-- <p>Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary" t-on-click="increment">Increment</button> -->
+
+       <div class="container-fluid">
+             <div id="map"  tabindex="0"></div>
+        </div>
     </t>
 
 </templates>

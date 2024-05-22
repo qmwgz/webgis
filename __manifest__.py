@@ -25,7 +25,7 @@
         'web.assets_backend': [
             'webgis/static/src/js/*.js',
             'webgis/static/src/xml/*.xml',
-            'webgis/static/src/css/*.scss',
+            'webgis/static/src/css/*.css',
         ],
     },
     'license': 'AGPL-3'
