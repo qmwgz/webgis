@@ -2,11 +2,15 @@
 
 import { Component,useState,onMounted} from "@odoo/owl";
 import { registry } from "@web/core/registry";
-
+import { CheckBox } from "@web/core/checkbox/checkbox";
+import { Dropdown } from "@web/core/dropdown/dropdown";
+import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 
 
 class AwesomeDashboard extends Component {
     static template = "webgis.AwesomeDashboard";
+    static components  = { CheckBox,Dropdown, DropdownItem};
+   
     setup() {
         this.state = useState({ value: 0 });
         onMounted(() => {
@@ -54,6 +58,14 @@ class AwesomeDashboard extends Component {
                 })
             });
         
+    }
+
+    onValueChange(){
+        alert(1233);
+    }
+
+    onItemSelected(cs){
+        alert(cs);
     }
 }
 

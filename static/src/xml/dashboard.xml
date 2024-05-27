@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
     <t t-name="webgis.AwesomeDashboard">
-        
         <!-- <p>Counter: <t t-esc="state.value"/></p>
       <button class="btn btn-primary" t-on-click="increment">Increment</button> -->
-
-       <div class="container-fluid">
-             <div id="map"  tabindex="0"></div>
+        <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+         Some Text
+        </CheckBox>
+        <div>
+        <Dropdown>
+            <t t-set-slot="toggler">File</t>
+            <DropdownItem onSelected="() => this.onItemSelected('file-open')">Open</DropdownItem>
+            <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">New Document</DropdownItem>
+            <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">New Spreadsheet</DropdownItem>
+        </Dropdown>
+        <Dropdown>
+            <t t-set-slot="toggler">Edit</t>
+            <DropdownItem onSelected="() => this.onItemSelected('edit-undo')">Undo</DropdownItem>
+            <DropdownItem onSelected="() => this.onItemSelected('edit-redo')">Redo</DropdownItem>
+            <DropdownItem onSelected="() => this.onItemSelected('edit-find')">Search</DropdownItem>
+        </Dropdown>
+        <Dropdown>
+            <t t-set-slot="toggler">About</t>
+            <DropdownItem onSelected="() => this.onItemSelected('about-help')">Help</DropdownItem>
+            <DropdownItem onSelected="() => this.onItemSelected('about-update')">Check update</DropdownItem>
+        </Dropdown>
+        </div>
+        <div class="container-fluid">
+            <div id="map"  tabindex="0"></div>
         </div>
     </t>
-
 </templates>
