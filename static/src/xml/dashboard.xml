@@ -6,25 +6,21 @@
         <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
          Some Text
         </CheckBox>
-        <div>
         <Dropdown>
             <t t-set-slot="toggler">File</t>
             <DropdownItem onSelected="() => this.onItemSelected('file-open')">Open</DropdownItem>
-            <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">New Document</DropdownItem>
-            <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">New Spreadsheet</DropdownItem>
+            <Dropdown>
+                <t t-set-slot="toggler">New</t>
+                <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">Document</DropdownItem>
+                <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">Spreadsheet</DropdownItem>
+            </Dropdown>
+            <DropdownItem onSelected="() => this.onItemSelected('file-save')">Save</DropdownItem>
+            <Dropdown>
+                <t t-set-slot="toggler">Save as...</t>
+                <DropdownItem onSelected="() => this.onItemSelected('file-save-as-csv')">CSV</DropdownItem>
+                <DropdownItem onSelected="() => this.onItemSelected('file-save-as-pdf')">PDF</DropdownItem>
+            </Dropdown>
         </Dropdown>
-        <Dropdown>
-            <t t-set-slot="toggler">Edit</t>
-            <DropdownItem onSelected="() => this.onItemSelected('edit-undo')">Undo</DropdownItem>
-            <DropdownItem onSelected="() => this.onItemSelected('edit-redo')">Redo</DropdownItem>
-            <DropdownItem onSelected="() => this.onItemSelected('edit-find')">Search</DropdownItem>
-        </Dropdown>
-        <Dropdown>
-            <t t-set-slot="toggler">About</t>
-            <DropdownItem onSelected="() => this.onItemSelected('about-help')">Help</DropdownItem>
-            <DropdownItem onSelected="() => this.onItemSelected('about-update')">Check update</DropdownItem>
-        </Dropdown>
-        </div>
         <div class="container-fluid">
             <div id="map"  tabindex="0"></div>
         </div>
